@@ -32,7 +32,6 @@ class CustomDataset(Dataset):
 
 
 if __name__ == '__main__':
-
     parser = argparse.ArgumentParser(description='General Training Pipeline')
     parser.add_argument('--dataset', type=str, default='twitch', help='Dataset')
     parser.add_argument('--data_dir', type=str, default='./data', help='Dataset') #replace with your own data path
@@ -52,19 +51,19 @@ if __name__ == '__main__':
     parser.add_argument('--gat_heads', type=int, default=8, help='number of heads for gat')
     parser.add_argument('--method', type=str, default='test', help='method: test, DA')
     parser.add_argument('--train_epochs', type=int, default=100, help='Number of epochs to train')
-    parser.add_argument('--test_epochs', type=int, default=1, help='Number of epochs to test')
-    parser.add_argument('--entropy_weight', type=float, default=0.1, help='Entropy weight for GCAL')
-    parser.add_argument('--replay_weight', type=float, default=0.1, help='Replay weight for GCAL')
-    parser.add_argument('--vae_weight', type=float, default=0.1, help='VAE weight for GCAL')
-    parser.add_argument('--edge_weight', type=float, default=0.1, help='Edge weight for GCAL')
-    parser.add_argument('--lr_model', type=float, default=0.01, help='Learning rate for the model in GCAL')
-    parser.add_argument('--wd_model', type=float, default=0.0001, help='Weight decay for the model in GCAL')
-    parser.add_argument('--lr_mem', type=float, default=0.01, help='Learning rate for memory in GCAL')
-    parser.add_argument('--wd_mem', type=float, default=0.0001, help='Weight decay for memory in GCAL')
-    parser.add_argument('--warmup_epochs', type=int, default=5, help='Number of warmup epochs in GCAL')
-    parser.add_argument('--inner_loop', type=int, default=1, help='Number of inner loops in GCAL')
-    parser.add_argument('--mt', type=float, default=0.5, help='MT parameter in GCAL')
-    parser.add_argument('--syn_ratio', type=float, default=0, help='Synthetic data')
+    parser.add_argument('--test_epochs', type=int, default=3, help='Number of epochs to test')
+    parser.add_argument('--entropy_weight', type=float, default=5, help='Entropy weight for GCAL')
+    parser.add_argument('--replay_weight', type=float, default=10, help='Replay weight for GCAL')
+    parser.add_argument('--vae_weight', type=float, default=1, help='VAE weight for GCAL')
+    parser.add_argument('--edge_weight', type=float, default=1, help='Edge weight for GCAL')
+    parser.add_argument('--lr_model', type=float, default=0.0001, help='Learning rate for the model in GCAL')
+    parser.add_argument('--wd_model', type=float, default=0.0005, help='Weight decay for the model in GCAL')
+    parser.add_argument('--lr_mem', type=float, default=0.001, help='Learning rate for memory in GCAL')
+    parser.add_argument('--wd_mem', type=float, default=0.0005, help='Weight decay for memory in GCAL')
+    parser.add_argument('--warmup_epochs', type=int, default=2, help='Number of warmup epochs in GCAL')
+    parser.add_argument('--inner_loop', type=int, default=10, help='Number of inner loops in GCAL')
+    parser.add_argument('--mt', type=float, default=0.2, help='MT parameter in GCAL')
+    parser.add_argument('--syn_ratio', type=float, default=0.15, help='Synthetic data')
     args = parser.parse_args()
     print(args)
     
