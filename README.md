@@ -1,12 +1,12 @@
 # GCAL
 
-Code of Paper: "Towards Sustainable Reuse of Graph Models via Continual Adaptive Learning"
+Code of Paper: "GCAL: Adapting Graph Models to Evolving Domain Shifts"
 
 **Keywords**: Continual Learning, Domain adaptation, Graph neural network
 
 ## Abstract
 
-This work addresses the challenge of unsupervised continual adaptation of graph models to evolving out-of-distribution (OOD) graph sequences. Traditional graph domain adaptation methods are limited to single-step adaptation, thus falling short of continual domain shifts and causing catastrophic forgetting. To address these challenges, this paper introduces the Graph Continual Adaptive Learning (GCAL) method, designed to enhance model sustainability and adaptability across various graph domains. GCAL employs a bilevel optimization strategy comprising "adapt" and "generate memory" phases. The "adapt" phase uses an information maximization approach to fine-tune the model with new domain graphs while re-adapting past memories to mitigate forgetting. Concurrently, the "generate memory" guided by a theoretical lower bound derived from information bottleneck theory, involves a variational memory graph generation module. This module is optimized through three specific losses: memory graph learning loss, regularization losses for stability and informativeness, and a generation loss to ensure relevance to the original graph. Extensive experimental evaluations demonstrate that GCAL substantially outperforms existing methods in terms of adaptability and knowledge retention, thereby offering a robust solution to the challenges of continual adaptation in graph models.
+This paper addresses the challenge of graph domain adaptation on evolving, multiple out-of-distribution (OOD) graphs. Conventional graph domain adaptation methods are confined to single-step adaptation, making them ineffective in handling continuous domain shifts and prone to catastrophic forgetting. This paper introduces the Graph Continual Adaptive Learning (GCAL) method, designed to enhance model sustainability and adaptability across various graph domains. GCAL employs a bilevel optimization strategy. The "adapt" phase uses an information maximization approach to fine-tune the model with new graph domains while re-adapting past memories to mitigate forgetting. Concurrently, the "generate memory", guided by a theoretical lower bound derived from information bottleneck theory, involves a variational memory graph generation module to condense original graphs into memories. Extensive experimental evaluations demonstrate that GCAL substantially outperforms existing methods in terms of adaptability and knowledge retention.
 
 ## **Dependency**
 We used Python 3.9.19, PyTorch 2.2.1, PyTorch Geometric 2.5.3. For the Python packages, please see requirements.txt.
